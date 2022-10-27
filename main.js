@@ -110,5 +110,14 @@ function convertoData(){
     })
 }
 
+function likes(){
+    document.querySelectorAll('like-button').forEach(like => {
+        like.addEventListener('click', function(){
+            like.classList.add('.like-button--liked');
+        })
+    })
+
+}
+
 
 // console.log(posts.created);
