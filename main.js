@@ -56,4 +56,22 @@ const posts = [
     }
 ];
 
-console.log(posts);
+// console.log(posts);
+
+
+const container = document.getElementById('container');
+
+convertiData();
+
+
+
+
+
+
+function convertiData(){
+    posts.forEach(post => {
+        post.created = post.created.split(' ').reverse().join('');
+    });
+};
+
+// console.log(posts.created);
