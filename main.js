@@ -105,7 +105,10 @@ function getPosts(){
 };
 
 function convertoData(){
-    var oggi = new Date(posts.created);
-console.log(oggi.getUTCHours());
+    posts.forEach(post => {
+        post.created = post.created.split('-').reverse().join('-');
+    })
 }
+
+
 // console.log(posts.created);
