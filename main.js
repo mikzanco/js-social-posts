@@ -57,7 +57,7 @@ const posts = [
 ];
 
 // console.log(posts);
-
+const uesrLikes = [1, 3, 4]
 
 const container = document.getElementById('container');
 
@@ -67,7 +67,9 @@ convertoData();
 getPosts();
 
 function getPosts(){
+
     let card = '';
+
     posts.forEach(post => {
         card += `<div class="post">
         <div class="post__header">
@@ -88,13 +90,13 @@ function getPosts(){
         <div class="post__footer">
             <div class="likes js-likes">
                 <div class="likes__cta">
-                    <a class="like-button  js-like-button" href="#" data-postid="${post.id}">
+                    <a class="like-button  js-like-button " href="#" data-postid="${post.id}">
                         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                         <span class="like-button__label">Mi Piace</span>
                     </a>
                 </div>
                 <div class="likes__counter">
-                    Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+                    Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone
                 </div>
             </div> 
         </div>            
@@ -104,9 +106,14 @@ function getPosts(){
     container.innerHTML = card;
 };
 
+
+// function isPostLiked(id){
+//     return uesrLikes.includes(id);
+// }
+
 function convertoData(){
     posts.forEach(post => {
-        post.created = post.created.split('-').reverse().join('-');
+        post.created = post.created.split('-').reverse().join('/');
     })
 }
 
