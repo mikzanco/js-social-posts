@@ -117,14 +117,13 @@ function convertoData(){
     })
 }
 
-function likes(){
-    document.querySelectorAll('like-button').forEach(like => {
-        like.addEventListener('click', function(){
-            like.classList.add('.like-button--liked');
-        })
-    })
 
-}
+// con querySelectorAll prendo tutti i bottoni 
+const likesButtons = document.querySelectorAll('.likeButton');
 
-
-// console.log(posts.created);
+// likesButtons.forEach( likeButton => {
+//     likeButton.addEventListener('click', function(){
+//         const postId = this.getAttribute('data-postid');
+//         if(this.classList.contains())
+//     })
+// });
